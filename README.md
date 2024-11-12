@@ -77,7 +77,7 @@ Una vez que hayas hecho esto, la base de datos se cargará automáticamente y po
 
  
   
-Cargar Datos y Ejecutar el Programa:
+Ejecutar el Programa:
 
 
 En la Terminal, navega a la carpeta del proyecto:
