@@ -63,7 +63,7 @@ Abrir Laragon y asegúrate de que MySQL esté funcionando.
 Haz clic en "Base de datos" en el panel de Laragon.
 
 
-Hacer doble click en laragon.MySQL.
+Haz doble click en laragon.MySQL.
 
 
 Haz clic en "cargar archivo SQL"(icono de la carpeta) para seleccionar tu archivo .sql.
