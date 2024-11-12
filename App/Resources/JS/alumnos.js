@@ -287,18 +287,15 @@ function eliminarAlumno(alumnoId) {
             .catch(error => {
                 document.getElementById('error-eliminar').innerHTML =  'Error al usar fetch: ' + error;
             });
-        });
-    
+        }); 
         document.getElementById('no').addEventListener('click', () => {
             formularioEliminar.style.display = 'none'; 
             listaAlumnosDiv.style.display = 'block'; 
-        });
-    
+        });  
         botonCerrarEliminar.addEventListener('click', () => {
             formularioEliminar.style.display = 'none';
             listaAlumnosDiv.style.display = 'block';
         });
 }
-    
 
 });
