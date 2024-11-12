@@ -53,7 +53,7 @@ Haz clic en el botón 'Code' y selecciona 'Download ZIP'. Luego, extrae el archi
   
     C:\laragon\www\Asistencia
     
-cargar la Base de Datos :
+Cargar la Base de Datos :
 
 Para cargar la base de datos de manera más sencilla en Laragon, sigue estos pasos:
 
