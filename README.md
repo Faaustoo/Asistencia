@@ -57,19 +57,19 @@ Cargar la Base de Datos :
 
 Para cargar la base de datos de manera más sencilla en Laragon, sigue estos pasos:
 
-Abrir Laragon y asegúrate de que MySQL esté funcionando.
+1-Abrir Laragon y asegúrate de que MySQL esté funcionando.
 
 
-Haz clic en "Base de datos" en el panel de Laragon.
+2-Haz clic en "Base de datos" en el panel de Laragon.
 
 
-Haz doble click en laragon.MySQL.
+3-Haz doble click en laragon.MySQL.
 
 
-Haz clic en "cargar archivo SQL"(icono de la carpeta) para seleccionar tu archivo .sql.
+4-Haz clic en "cargar archivo SQL"(icono de la carpeta) para seleccionar tu archivo .sql.
 
 
-Haz clic en "Ejecutar" para cargar el archivo.
+5-Haz clic en "Ejecutar" para cargar el archivo.
 
 Una vez que hayas hecho esto, la base de datos se cargará automáticamente y podrás ver las tablas y datos en la base de datos seleccionada
 
