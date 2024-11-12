@@ -53,16 +53,25 @@ Haz clic en el botón 'Code' y selecciona 'Download ZIP'. Luego, extrae el archi
   
     C:\laragon\www\Asistencia
     
-cargar la Base de Datos en MySQL 
+cargar la Base de Datos :
+
+Para cargar la base de datos de manera más sencilla en Laragon, sigue estos pasos:
+
+Abrir Laragon y asegúrate de que MySQL esté funcionando.
 
 
- Abre la Terminal de Laragon y accede a MySQL con
-    
-    mysql -u root -p; 
-  -Crea la base de datos para el proyecto:
+Haz clic en "Base de datos" en el panel de Laragon.
 
-  
- Crea la base de datos usando el archivo Asistencia.sql (puedes copiar y pegar el contenido del archivo SQL en la terminal).
+
+Hacer doble click en laragon.MySQL.
+
+
+Haz clic en "cargar archivo SQL"(icono de la carpeta) para seleccionar tu archivo .sql.
+
+
+Haz clic en "Ejecutar" para cargar el archivo.
+
+ 
   
 Cargar Datos y Ejecutar el Programa:
 
