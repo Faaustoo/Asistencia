@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="App/Resources/CSS/alumnos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="login-container">
+    <!-- Contenedor del encabezado -->
+    <div class="header-container">
+        <button class="atras" onclick="atras()">Atrás</button>
+    </div>
+    
+    <!-- Contenedor de botones de acción -->
+    <div class="button-container">
+        <button class="ingresar" type="button" id="lista-alumnos">Alumnos</button>
+        <button class="ingresar" type="button" id="asistencia-alumno">Tomar Asistencia</button>
+        <button class="ingresar" type="button" id="condicion-alumno">Ver condición</button>
+    </div>
+
+    <!-- Contenedor principal de contenido -->
+    <div class="contenido-container" >
+        
+        <!-- Sección de lista de alumnos -->
+        <div id="Listalumnos" style="display:none;">
+            <p>Sección lista de alumnos</p>
+            <div class="instituciones" id="lista-Alumnos" ></div>
+            <button class="ingresar" type="button" id="crear-alumno">Ingresar Alumno</button>
+        </div>
+
+        <!-- Formulario para ingresar datos del alumno -->
+        <div class="form-container" style="display: none;" id="formularioAlumno">
+            <h3>Ingresar datos del alumno</h3>
+            <form id="formDatosAlumno" method="post">
+                <div class="info-form-container">
+                    <div class="fila">
+                        <div class="columna">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" >
+                        </div>
+                        <div class="columna">
+                            <label for="apellido">Apellido:</label>
+                            <input type="text" id="apellido" name="apellido" >
+                        </div>
+                        <div class="columna">
+                            <label for="dni">DNI:</label>
+                            <input type="text" id="dni" name="dni" >
+                        </div>
+                    </div>
+                    <div class="fila">
+                        <div class="columna">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" >
+                        </div>
+                        <div class="columna">
+                            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" >
+                        </div>
+                    </div>
+                    <button type="submit" id="enviar-alumno">Enviar</button>
+                    <div class="cerrar">
+                        <button type="button" id="cerrar-alumno">CERRAR</button>
+                    </div>
+                    <div class="mensajes-exito">
+                        <div id="resultado"></div>
+                    </div>
+                    <div class="mensajes-error">
+                        <div id="error" class="error"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Formulario para editar datos del alumno -->
+        <div class="form-container" style="display: none;" id="formularioeditarAlumno">
+            <h3>Ingresar datos a editar del alumno</h3>
+            <form id="formDatosEditarAlumno" method="post">
+                <div class="info-form-container">
+                    <div class="fila">
+                        <div class="columna">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre_editar" name="nombre" >
+                        </div>
+                        <div class="columna">
+                            <label for="apellido">Apellido:</label>
+                            <input type="text" id="apellidoe_editar" name="apellido" >
+                        </div>
+                        <div class="columna">
+                            <label for="dni">DNI:</label>
+                            <input type="text" id="dnie_editar" name="dni" >
+                        </div>
+                    </div>
+                    <div class="fila">
+                        <div class="columna">
+                            <label for="email">Email:</label>
+                            <input type="email" id="emaile_editar" name="email" >
+                        </div>
+                        <div class="columna">
+                            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                            <input type="date" id="fecha_nacimientoe_editar" name="fecha_nacimiento" >
+                        </div>
+                    </div>
+                    <button type="submit" id="enviar-alumno-editar">Enviar</button>
+                    <div class="cerrar">
+                        <button type="button" id="cerrar-alumno-editar">CERRAR</button>
+                    </div>
+                    <div class="mensajes-exito">
+                        <div id="resultado-editar"></div>
+                    </div>
+                    <div class="mensajes-error">
+                        <div id="error-editar" class="error"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Formulario para eliminar un alumno -->
+        <div class="form-container" style="display: none;" id="formularioAlumnoEliminar">
+            <form id="formDatosEliminarAlumno" method="post">
+                <div class="info-form-container">
+                    <div class="fila">
+                        <div class="columna">
+                            <p>¿Estás seguro?</p>
+                            <button type="button" id="si">Sí</button>
+                            <button type="button" id="no">No</button>
+                        </div>
+                    </div>
+                    <div class="cerrar">
+                        <button type="button" id="cerrar-alumno-eliminar">CERRAR</button>
+                    </div>
+                    <div class="mensajes-exito">
+                        <div id="resultado-eliminar"></div>
+                    </div>
+                    <div class="mensajes-error">
+                        <div id="error-eliminar" class="error"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Sección de condiciones de los alumnos -->
+        <div id="condicion-Alumnos" style="display: none;">
+            <div id="condicion-lista"></div>
+            <div id="dia-clases" ></div>
+            <div id="error-condicion"></div>
+            <div id="resultado-condicion"></div>
+
+            <!-- Formulario para editar nota -->
+            <div class="form-container" style="display: none;" id="formulariEditarNota">
+                <h3>Ingresar Notas</h3>
+                <form id="formEditarNota" method="post">
+                    <div class="info-form-container">
+                        <div class="fila">
+                            <div class="columna">
+                                <label for="parcial_uno">Nota primer parcial:</label>
+                                <input type="number" id="parcial_uno" name="parcial_uno" >
+                            </div>
+                            <div class="columna">
+                                <label for="parcial_dos">Nota Segundo parcial:</label>
+                                <input type="number" id="parcial_dos" name="parcial_dos" >
+                            </div>
+                            <div class="columna">
+                                <label for="trabajo_final">Nota de Trabajo final:</label>
+                                <input type="number" id="trabajo_final" name="trabajo_final" >
+                            </div>
+                        </div>
+                        
+                        <button type="submit" id="enviar-nota">Enviar</button>
+                        <div class="cerrar">
+                            <button type="button" id="cerrar-nota">CERRAR</button>
+                        </div>
+                        <div class="mensajes-exito">
+                            <div id="resultado-editar-nota"></div>
+                        </div>
+                        <div class="mensajes-error">
+                            <div id="error-editar-nota" class="error"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Sección para tomar asistencia de los alumnos -->
+        <div id="Listalumnos" style="display:block;" ">
+            <div id="asistencia-Alumnos" style="display: none;">
+            <div id="tomar-Asistencia"></div>
+            
+            <!-- Formulario para confirmar asistencia -->
+             <div class="container-confirmar">
+                <div class="form-container-confirmar" style="display: none;" id="formularioTomarAsistencia" >
+                    <form id="formDatosAsistencia" method="post">
+                        <div class="info-form-container">
+                            <div class="fila">
+                                <div class="columna">
+                                    <p>¿Estás seguro?</p>
+                                    <button class="todos" type="button" id="si-asistencia">Sí</button>
+                                    <button class="todos" type="button" id="no-asistencia">No</button>
+                                </div>
+                            </div>
+                            <div class="cerrar">
+                                <button type="button" id="cerrar-asistencia">CERRAR</button>
+                            </div>
+                            <div class="mensajes-exito">
+                                <div id="resultado-asistencia"></div>
+                            </div>
+                            <div class="mensajes-error">
+                                <div id="error-asistencia" class="error"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+             </div>
+            
+
+            <!-- Formulario para eliminar asistencia -->
+            <div class="form-container-confirmar" style="display: none;" id="formularioEliminarAsistencia">
+                <form id="formDatosEliminarAsistencia" method="post">
+                    <div class="info-form-container">
+                        <div class="fila">
+                            <div class="columna">
+                                <label for="id-asistencia">ID del alumno:</label>
+                                <input type="number" id="id-asistencia" name="id-asistencia" >
+                            </div>
+                            <div class="columna">
+                                <label for="fecha-asistencia">Fecha:</label>
+                                <input type="date" id="fecha-asistencia" name="fecha-asistencia" >
+                            </div>
+                        </div>
+                        
+                        <button type="button" id="enviar-asistencia-eliminar">Enviar</button>
+                        <div class="cerrar">
+                            <button type="button" id="cerrar-a-eliminar">CERRAR</button>
+                        </div>
+                        <div class="mensajes-exito">
+                            <div id="resultado-eliminarAsistencia"></div>
+                        </div>
+                        <div class="mensajes-error">
+                            <div id="error-eliminarAsistencia" class="error"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+<script src="App/Resources/JS/alumnos.js"></script>
+<script src="App/Resources/JS/asistencia.js"></script>
+<script src="App/Resources/JS/condicion.js"></script>
+</body>
+</html>
