@@ -239,7 +239,6 @@ function editarAlumno(alumnoId, listaAlumnos) {
                 setTimeout(() => {formularioEditar.style.display = 'none';
                     listaAlumnosDiv.style.display = 'block';
                     location.reload();}, 1000);
-                
             } else if (data.estado === 'error') {
                 if (data.errores) {
                     document.getElementById('error-editar').innerHTML = data.errores.join('<br>');
@@ -252,7 +251,6 @@ function editarAlumno(alumnoId, listaAlumnos) {
         });
     });
 }
-
 
 function eliminarAlumno(alumnoId) {
         formularioEliminar.style.display = 'block';
