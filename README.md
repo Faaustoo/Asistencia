@@ -71,6 +71,10 @@ Haz clic en "cargar archivo SQL"(icono de la carpeta) para seleccionar tu archiv
 
 Haz clic en "Ejecutar" para cargar el archivo.
 
+Una vez que hayas hecho esto, la base de datos se cargará automáticamente y podrás ver las tablas y datos en la base de datos seleccionada
+
+
+
  
   
 Cargar Datos y Ejecutar el Programa:
